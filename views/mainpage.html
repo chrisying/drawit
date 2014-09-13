@@ -3,19 +3,24 @@
   <head>
     <title>DrawIt!</title>
     <style>
+      body {
+        padding: 20px;
+      }
       #logo {
         font-size: 60px;
+        font-family: "Comic Sans MS", cursive, sans-serif
       }
 
       #drawbutton {
         background-color: orange;
-        width: 100px;
+        width: 115px;
         height: 45px;
         margin: 10px;
         border-radius: 10px;
         border: 1px solid black;
         box-shadow: 5px 5px 2px #888888;
         font-size: 30px;
+        font-family: "Comic Sans MS", cursive, sans-serif
       }
 
       #picbox {
@@ -33,6 +38,11 @@
       img {
         float: left;
       }
+
+      #words {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 24px;
+      }
     </style>
   </head>  
   <body>
@@ -44,6 +54,10 @@
     </div>
     <br>
     {% if showimg %}
+    <div id='words'>
+      Pictures you've recently helped DrawIt!
+    </div>
+    <br>
     <div id='picbox'>
       <div id='userbox'>
         <img src='{{ topleft }}' width=250 height=250></img>
