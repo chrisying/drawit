@@ -9,5 +9,5 @@ from picture import GetImage
 application = webapp2.WSGIApplication([
   ('/', MainPage),
   # ('/draw', DrawPage),
-  ('/picture', GetImage),
+  ('/picture', ImagePage),
 ], debug=True)
