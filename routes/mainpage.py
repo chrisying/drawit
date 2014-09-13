@@ -38,7 +38,7 @@ class MainPage(webapp2.RequestHandler):
           'bottomleft': result3[0].image if len(result3) > 0 else '',
           'bottomright': result4[0].image if len(result4) > 0 else '',
           'reference': '/assets/butterfly.png',
-          'showimg': not init
+          'showimg': (not init)
       }
       template = JINJA_ENVIRONMENT.get_template('mainpage.html')
       self.response.write(template.render(template_values))

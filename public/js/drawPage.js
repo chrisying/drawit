@@ -20,7 +20,7 @@ $(document).ready(function (){
       $('.canvas-tool-container').append("<a class='color-tool' href='#main-canvas' data-color='" + this + "' style='background: " + this + ";'></a> ");
   });
 
-  $.each([1, 2, 3, 5, 10, 15],
+  $.each([1, 2, 3, 5, 10, 150],
     function() {
       $('.canvas-tool-container').append("<a class='size-tool' id='size-tool-" + this + "' href='#main-canvas' data-size='" + this + "'><h3>" + this + "</h3></a> ");
   });
@@ -31,7 +31,7 @@ $(document).ready(function (){
     function() {
       $('.canvas-tool-container').append("<a class='function-tool' id='function-tool-" + this + "' href='#main-canvas' data-tool='" + this + "'><img src=" + image_links[this] + "></a> ");
   });
-  $('.canvas-tool-container').append("<a class='submit-tool' id='submit-tool-submit'></a> ");
+  $('.canvas-tool-container').append("<a class='submit-tool' id='submit-tool-submit'><img src='assets/submit.png'></a> ");
 
   $('#main-canvas').sketch({defaultColor: '#000',
                             defaultSize: 5,

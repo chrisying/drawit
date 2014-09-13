@@ -59,7 +59,8 @@ a {
 .color-tool,
 .size-tool,
 .function-tool,
-.submit-tool {
+.submit-tool,
+.zoom-tool {
   display: block;
   height: 35px;
   width: 35px;
@@ -74,7 +75,9 @@ a {
 }
 
 .size-tool,
-.function-tool {
+.function-tool,
+.submit-tool,
+.zoom-tool {
   display: block;
   background: #ccc;
   height: 35px;
@@ -82,19 +85,25 @@ a {
 }
 
 .size-tool:hover,
-.function-tool:hover {
+.function-tool:hover,
+.submit-tool:hover,
+.zoom-tool:hover {
   background: #888;
 }
 
 .size-tool:active,
-.function-tool:active {
+.function-tool:active,
+.submit-tool:active,
+.zoom-tool:active {
   background: #555;
 }
 
 .function-tool {
 }
 
-.function-tool img {
+.function-tool img,
+.submit-tool img,
+.zoom-tool img {
   display: block;
   width: 30px;
   height: 30px;
