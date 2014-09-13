@@ -26,13 +26,18 @@ class MainPage(webapp2.RequestHandler):
     user = users.get_current_user()
     init = self.request.get('init')
 
+    result1 = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', 'butterfly', 0, 0).fetch(1)
+    result2 = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', 'butterfly', 0, 1).fetch(1)
+    result3 = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', 'butterfly', 1, 0).fetch(1)
+    result4 = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', 'butterfly', 1, 1).fetch(1)
+
     if user:
       template_values = {
-          'topleft': '/picture?title=butterfly&row=0&col=0',
-          'topright': '/picture?title=butterfly&row=0&col=1',
-          'bottomleft': '/picture?title=butterfly&row=1&col=0',
-          'bottomright': '/picture?title=butterfly&row=1&col=1',
-          'reference': '/pics/butterfly.png',
+          'topleft': result1[0].image if len(result1) > 0 else '',
+          'topright': result2[0].image if len(result2) > 0 else '',
+          'bottomleft': result3[0].image if len(result3) > 0 else '',
+          'bottomright': result4[0].image if len(result4) > 0 else '',
+          'reference': '/assets/butterfly.png',
           'showimg': not init
       }
       template = JINJA_ENVIRONMENT.get_template('mainpage.html')

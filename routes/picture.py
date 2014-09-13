@@ -28,10 +28,7 @@ class ImagePage(webapp2.RequestHandler):
     col = int(self.request.get('col'))
     result = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', title, row, col).fetch(1)
     if result:
-      self.redirect(result[0].image)
-      #print(result[0].image)
-      #self.response.headers['Content-Type'] = 'image/png'
-      #self.response.out.write(result[0].image)
+      self.response.out.write('<img src="' + result[0].image + '">')
     else:
       self.response.write('Picture not found!')
 
