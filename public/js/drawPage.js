@@ -12,7 +12,7 @@ function debounce(func, wait, immediate) {
 
     if (immediate && !timeout) func.apply(context, args);
   };
-};
+}
 
 $(document).ready(function (){
   $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'],
@@ -31,6 +31,7 @@ $(document).ready(function (){
     function() {
       $('.canvas-tool-container').append("<a class='function-tool' id='function-tool-" + this + "' href='#main-canvas' data-tool='" + this + "'><img src=" + image_links[this] + "></a> ");
   });
+  $('.canvas-tool-container').append("<a class='submit-tool' id='submit-tool-submit'></a> ");
 
   $('#main-canvas').sketch({defaultColor: '#000',
                             defaultSize: 5,
@@ -57,6 +58,24 @@ $(document).ready(function (){
       active_function_tool = e.currentTarget.id;
       $('#' + active_function_tool).addClass('active');
     }
+  });
+
+  $('.submit-tool').click(function (e) {
+    var dataURL = $('#main-canvas')[0].toDataURL();
+
+    $.ajax({
+      type: 'POST',
+      url: '/picture',
+      data: {
+        imgBase64: dataURL
+      },
+      success: function (data) {
+        window.location.href = '/';
+      },
+      error: function (xhr, status, err) {
+        console.log(err);
+      }
+    });
   });
 });
 

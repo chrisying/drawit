@@ -18,4 +18,4 @@ handlers:
 - url: /js
   static_dir: public/js
 - url: /.*
-  script: routes.drawPage.application
+  script: drawit.application

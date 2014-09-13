@@ -58,7 +58,8 @@ a {
 
 .color-tool,
 .size-tool,
-.function-tool {
+.function-tool,
+.submit-tool {
   display: block;
   height: 35px;
   width: 35px;

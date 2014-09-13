@@ -36,7 +36,3 @@ class DrawPage(webapp2.RequestHandler):
 class Upload(webapp2.RequestHandler):
   def post(self):
     pass
-
-application = webapp2.WSGIApplication([
-    ('/', DrawPage)
-], debug=True)
