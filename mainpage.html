@@ -4,16 +4,34 @@
     <title>DrawIt!</title>
     <style>
       #logo {
-        font-size: large
+        font-size: 60px;
       }
 
       #drawbutton {
         background-color: orange;
         width: 100px;
         height: 50px;
+        margin: 10px;
         border-radius: 10px;
         border: 1px solid black;
         box-shadow: 5px 5px 2px #888888;
+        font-size: 24px;
+      }
+
+      #picbox {
+        width: 1000px;
+        height: 500px;
+        float: left;
+      }
+
+      #userbox {
+        width: 500px;
+        height: 500px;
+        float: left;
+      }
+
+      img {
+        float: left;
       }
     </style>
   </head>  
@@ -25,11 +43,15 @@
       <a href='/draw'>DrawIt!</a>
     </div>
     <br>
-    <img src='{{ topleft }}'></img>
-    <img src='{{ topright }}'></img>
-    <img src='{{ bottomleft }}'></img>
-    <img src='{{ bottomright }}'></img>
-    <img src='{{ reference }}'></img>
+    <div id='picbox'>
+      <div id='userbox'>
+        <img src='{{ topleft }}' width=250 height=250></img>
+        <img src='{{ topright }}' width=250 height=250></img>
+        <img src='{{ bottomleft }}' width=250 height=250></img>
+        <img src='{{ bottomright }}' width=250 height=250></img>
+      </div>
+      <img src='{{ reference }}' width=500 height=500></img>
+    </div>
 
   </body>
 </html>

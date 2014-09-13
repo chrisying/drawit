@@ -19,8 +19,8 @@ class MainPage(webapp2.RequestHandler):
   def get(self):
     
     # An example of putting an image into database
-    p2 = picture.Picture(title = 'doge',image = db.Blob(urlfetch.Fetch('http://doge2048.com/meta/doge-600.png').content))
-    p2.put()
+    # p2 = picture.Picture(title = 'doge',row=3, col=3, image = db.Blob(urlfetch.Fetch('http://doge2048.com/meta/doge-600.png').content))
+    # p2.put()
 
     # Checks for Google user
     user = users.get_current_user()

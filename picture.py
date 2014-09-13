@@ -23,8 +23,8 @@ class Picture(db.Model):
 class ImagePage(webapp2.RequestHandler):
   def get(self):
     title = self.request.get('title')
-    row = self.request.get('row')
-    col = self.request.get('col')
+    row = int(self.request.get('row'))
+    col = int(self.request.get('col'))
     result = db.GqlQuery('SELECT * FROM Picture WHERE title = :1 AND row = :2 AND col = :3 LIMIT 1', title, row, col).fetch(1)
     if result:
       self.response.headers['Content-Type'] = 'image/png'
