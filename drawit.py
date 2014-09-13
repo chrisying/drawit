@@ -4,10 +4,10 @@ import webapp2
 
 from routes.mainpage import MainPage
 from routes.drawPage import DrawPage
-from routes.picture import GetImage
+from routes.picture import ImagePage
 
 application = webapp2.WSGIApplication([
   ('/', MainPage),
   ('/draw', DrawPage),
-  ('/picture', GetImage),
+  ('/picture', ImagePage),
 ], debug=True)

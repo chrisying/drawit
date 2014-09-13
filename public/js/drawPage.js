@@ -65,9 +65,9 @@ $(document).ready(function (){
 
     $.ajax({
       type: 'POST',
-      url: '/picture',
+      url: '/picture?title=butterfly&row=0&col=0',
       data: {
-        imgBase64: dataURL
+        image: dataURL
       },
       success: function (data) {
         window.location.href = '/';
