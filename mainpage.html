@@ -10,12 +10,12 @@
       #drawbutton {
         background-color: orange;
         width: 100px;
-        height: 50px;
+        height: 45px;
         margin: 10px;
         border-radius: 10px;
         border: 1px solid black;
         box-shadow: 5px 5px 2px #888888;
-        font-size: 24px;
+        font-size: 30px;
       }
 
       #picbox {
@@ -43,6 +43,7 @@
       <a href='/draw'>DrawIt!</a>
     </div>
     <br>
+    {% if showimg %}
     <div id='picbox'>
       <div id='userbox'>
         <img src='{{ topleft }}' width=250 height=250></img>
@@ -52,6 +53,7 @@
       </div>
       <img src='{{ reference }}' width=500 height=500></img>
     </div>
+    {% endif %}
 
   </body>
 </html>
