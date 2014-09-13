@@ -19,11 +19,12 @@ class MainPage(webapp2.RequestHandler):
   def get(self):
     
     # An example of putting an image into database
-    p2 = picture.Picture(title = 'doge',image = db.Blob(urlfetch.Fetch('http://doge2048.com/meta/doge-600.png').content))
-    p2.put()
+    # p2 = picture.Picture(title = 'doge',row=3, col=3, image = db.Blob(urlfetch.Fetch('http://doge2048.com/meta/doge-600.png').content))
+    # p2.put()
 
     # Checks for Google user
     user = users.get_current_user()
+    init = self.request.get('init')
 
     if user:
       template_values = {
@@ -31,7 +32,8 @@ class MainPage(webapp2.RequestHandler):
           'topright': '/picture?title=butterfly&row=0&col=1',
           'bottomleft': '/picture?title=butterfly&row=1&col=0',
           'bottomright': '/picture?title=butterfly&row=1&col=1',
-          'reference': '/pics/butterfly.png'
+          'reference': '/pics/butterfly.png',
+          'showimg': not init
       }
       template = JINJA_ENVIRONMENT.get_template('mainpage.html')
       self.response.write(template.render(template_values))
