@@ -4,7 +4,7 @@ import webapp2
 
 from mainpage import MainPage
 # from drawpage import DrawPage
-from picture import GetImage
+from picture import ImagePage
 
 application = webapp2.WSGIApplication([
   ('/', MainPage),

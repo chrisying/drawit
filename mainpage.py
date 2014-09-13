@@ -19,11 +19,6 @@ class MainPage(webapp2.RequestHandler):
   def get(self):
     
     # An example of putting an image into database
-    # Does not work yet!
-    '''
-    p1 = picture.Picture(title = 'butterfly',image = db.Blob(urlfetch.Fetch('http://localhost:8080/pics/butterfly.png').content))
-    p1.put()
-    '''
     p2 = picture.Picture(title = 'doge',image = db.Blob(urlfetch.Fetch('http://doge2048.com/meta/doge-600.png').content))
     p2.put()
 
@@ -31,12 +26,12 @@ class MainPage(webapp2.RequestHandler):
     user = users.get_current_user()
 
     if user:
-      # Fetch the recent 10 images user has contributed to
-      # TODO
-
-      # Temp
       template_values = {
-          'pictures': db.GqlQuery('SELECT * FROM Picture WHERE title = :1 LIMIT 1', 'doge').fetch(1)
+          'topleft': '/picture?title=butterfly&row=0&col=0',
+          'topright': '/picture?title=butterfly&row=0&col=1',
+          'bottomleft': '/picture?title=butterfly&row=1&col=0',
+          'bottomright': '/picture?title=butterfly&row=1&col=1',
+          'reference': '/pics/butterfly.png'
       }
       template = JINJA_ENVIRONMENT.get_template('mainpage.html')
       self.response.write(template.render(template_values))

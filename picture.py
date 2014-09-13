@@ -35,7 +35,7 @@ class ImagePage(webapp2.RequestHandler):
   def post(self):
     picture = Picture(
         title=self.request.get('title'),
-        image=self.request.get('content')
+        image=self.request.get('content'),
         row=self.request.get('row'),
         col=self.request.get('col')
     )

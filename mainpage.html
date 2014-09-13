@@ -3,6 +3,10 @@
   <head>
     <title>DrawIt!</title>
     <style>
+      #logo {
+        font-size: large
+      }
+
       #drawbutton {
         background-color: orange;
         width: 100px;
@@ -15,16 +19,17 @@
   </head>  
   <body>
     <!--Logo-->
-    <div>DrawIt</div> 
+    <div id='logo'>DrawIt</div> 
 
     <div id='drawbutton'>
       <a href='/draw'>DrawIt!</a>
     </div>
     <br>
-    {% for picture in pictures %}
-      <b>{{ picture.title }}</b>:
-      <br>
-      <img src='/picture?title={{ picture.title }}'></img>
-    {% endfor %}
+    <img src='{{ topleft }}'></img>
+    <img src='{{ topright }}'></img>
+    <img src='{{ bottomleft }}'></img>
+    <img src='{{ bottomright }}'></img>
+    <img src='{{ reference }}'></img>
+
   </body>
 </html>
