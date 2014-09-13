@@ -11,5 +11,11 @@ libraries:
   version: 2.6
 
 handlers:
+- url: /assets
+  static_dir: public/assets
+- url: /css
+  static_dir: public/css
+- url: /js
+  static_dir: public/js
 - url: /.*
-  script: drawit.application
+  script: routes.drawPage.application

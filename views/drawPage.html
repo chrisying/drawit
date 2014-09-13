@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/drawPage.css">
+
+    <title>Draw it!</title>
+  </head>
+
+  <body>
+    <div class="banner">
+      <div>
+        <h3 class="user-linktext">{{user_linktext}}</h3>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="canvas-container">
+        <canvas class="draw-canvas" id="main-canvas" width="800" height="800">
+        </canvas>
+      </div>
+      <div class="canvas-tool-container">
+      </div>
+      <div class="viewport-tool-container">
+        <div class="zoom-tool">
+        </div>
+      </div>
+      <div class="viewport-container">
+        <div class="viewport" id="main-viewport">
+          <img class="viewport-image" id="main-viewport-image" src="http://upload.wikimedia.org/wikipedia/commons/d/de/KDE_2_logo.png" style="left: 0; top: 0">
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//intridea.github.io/sketch.js/lib/sketch.js"></script>
+    <script type="text/javascript" src='js/drawPage.js'></script>
+  </body>
+</html>

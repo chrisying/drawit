@@ -1,0 +1,145 @@
+/*
+ * Basic
+ */
+
+h1, h2, h3, h4, h5, h6, body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.user-linktext {
+  float: right;
+  padding: 10px;
+}
+
+/*
+ * Banner
+ */
+
+.banner {
+  background-color: #D3A054;
+  box-shadow: inset 0px -20px 24px #80671B, 0px 1px 4px #888;;
+  height: 45px;
+}
+
+/*
+ * Main Container
+ */
+
+.container {
+   margin: 25px 50px;
+}
+
+/*
+ * Canvas Container
+ */
+
+.canvas-container {
+  float: left;
+}
+
+.draw-canvas {
+  border: 1px solid rgb(189, 189, 189);
+}
+
+/*
+ * Canvas Tool Container
+ */
+
+.canvas-tool-container {
+  margin-left: 15px;
+  float: left;
+}
+
+
+.color-tool,
+.size-tool,
+.function-tool {
+  display: block;
+  height: 35px;
+  width: 35px;
+  margin-bottom: 10px;
+  border: solid 1px #aaa;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
+}
+
+.color-tool {
+}
+
+.size-tool,
+.function-tool {
+  display: block;
+  background: #ccc;
+  height: 35px;
+  width: 35px;
+}
+
+.size-tool:hover,
+.function-tool:hover {
+  background: #888;
+}
+
+.size-tool:active,
+.function-tool:active {
+  background: #555;
+}
+
+.function-tool {
+}
+
+.function-tool img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  margin-top: 2.5px;
+}
+
+.active {
+  background: #888;
+}
+
+/*
+ * Viewport Tool Container
+ */
+
+.viewport-tool-container {
+  margin-left: 25px;
+  float: left;
+}
+
+.zoom-tool {
+  display: block;
+  height: 35px;
+  width: 35px;
+  margin-bottom: 10px;
+  border: solid 1px #aaa;
+}
+
+/*
+ * Viewport Container
+ */
+
+.viewport-container {
+  float: left;
+  margin-left: 15px;
+}
+
+.viewport {
+  display: block;
+  height: 800px;
+  width: 800px;
+  border: 1px solid rgb(189, 189, 189);
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport-image {
+  position: absolute;
+};
