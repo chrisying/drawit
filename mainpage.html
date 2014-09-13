@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <title>DrawIt!</title>
+  <head>
+    <title>DrawIt!</title>
+    <style>
+      #drawbutton {
+        background-color: orange;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid black;
+        box-shadow: 5px 5px 2px #888888;
+      }
+    </style>
+  </head>  
   <body>
     <!--Logo-->
     <div>DrawIt</div> 
 
-    <button type="submit" formaction="/draw">DrawIt!</button>
+    <div id='drawbutton'>
+      <a href='/draw'>DrawIt!</a>
+    </div>
+    <br>
+    {% for picture in pictures %}
+      <b>{{ picture.title }}</b>:
+      <br>
+      <img src='/picture?title={{ picture.title }}'></img>
+    {% endfor %}
   </body>
 </html>
